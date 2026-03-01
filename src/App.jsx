@@ -9,12 +9,16 @@ import './index.css';
 function App() {
   return (
     <Router>
+      <div className="ambient-background">
+        <div className="blob blob-1"></div>
+        <div className="blob blob-2"></div>
+      </div>
       <nav className="navbar">
         <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Home</NavLink>
         <NavLink to="/unreleased" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Unreleased</NavLink>
         <NavLink to="/blog" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Blog</NavLink>
       </nav>
-      <main className="container fade-in">
+      <main className="container fade-in" style={{ position: 'relative', zIndex: 1 }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/unreleased" element={<Unreleased />} />
